@@ -12,7 +12,8 @@
     "build:commonjs": "tsc --project ./tsconfig-commonjs.json",
     "build:esnext": "tsc --project ./tsconfig-esnext.json",
     "build": "yarn build:commonjs && yarn build:esnext",
-    "clean": "rimraf ./build"
+    "clean": "rimraf ./build",
+    "prepublish": "yarn clean && yarn build"
   },
   "dependencies": {
     "async-retry": "^1.3.3"
