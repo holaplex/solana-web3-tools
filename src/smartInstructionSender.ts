@@ -1,4 +1,3 @@
-import { WalletNotConnectedError } from '@solana/wallet-adapter-base';
 import {
   Commitment,
   Connection,
@@ -105,7 +104,7 @@ export class SmartInstructionSender {
   };
 
   public send = async () => {
-    if (!this.wallet?.publicKey) throw new WalletNotConnectedError();
+    if (!this.wallet?.publicKey) throw new Error('WALLET_NOT_CONNECTED');
     if (!this.instructionSets?.length)
       throw new Error('No instruction sets provided');
 
