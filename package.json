@@ -6,12 +6,10 @@
   "author": "Holaplex Maintainers <engineering@holaplex.com>",
   "license": "MIT",
   "private": false,
-  "main": "./build/commonjs/index.js",
-  "module": "./build/esnext/index.js",
+  "main": "./build/index.js",
+  "declarations": "./build/index.d.ts",
   "scripts": {
-    "build:commonjs": "tsc --project ./tsconfig-commonjs.json",
-    "build:esnext": "tsc --project ./tsconfig-esnext.json",
-    "build": "yarn build:commonjs && yarn build:esnext",
+    "build": "tsc",
     "clean": "rimraf ./build",
     "prepublish": "yarn clean && yarn build"
   },
