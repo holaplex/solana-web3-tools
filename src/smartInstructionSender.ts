@@ -6,7 +6,10 @@ import {
   PublicKey,
 } from '@solana/web3.js';
 import retry from 'async-retry';
-import { sendSignedTransaction } from './tools/connectionTools';
+import {
+  sendSignedTransaction,
+  SendSignedTransactionResult,
+} from './tools/connectionTools';
 import { getSlotAndCurrentBlockHash } from './tools';
 import { InstructionSet } from './types';
 
@@ -245,10 +248,17 @@ export class SmartInstructionSender {
           async (bail: (reason: Error | any) => void) => {
             retryNumber++;
 
-            const result = await sendSignedTransaction({
-              connection: this.connection!,
-              signedTransaction: tx,
-            });
+            let result: Awaited<SendSignedTransactionResult> | null = null;
+            try {
+              result = await sendSignedTransaction({
+                connection: this.connection!,
+                signedTransaction: tx,
+              });
+            } catch (error: any) {
+              result = {
+                err: error,
+              };
+            }
 
             if (result.err) {
               if (
