@@ -2,9 +2,12 @@
   "name": "@holaplex/solana-web3-tools",
   "version": "0.1.0",
   "description": "A set of Web3 tools to improve the User Experience on Solana Frontends.",
-  "repository": "https://github.com/holaplex/solana-web3-tools",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holaplex/solana-web3-tools.git"
+  },
   "author": "Holaplex Maintainers <engineering@holaplex.com>",
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "private": false,
   "main": "./build/index.js",
   "declarations": "./build/index.d.ts",
@@ -25,5 +28,13 @@
   },
   "peerDependencies": {
     "@solana/web3.js": "^1.31.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/holaplex/solana-web3-tools/issues"
+  },
+  "homepage": "https://github.com/holaplex/solana-web3-tools#readme",
+  "keywords": [
+    "solana",
+    "holaplex"
+  ]
 }
