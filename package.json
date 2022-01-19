@@ -14,6 +14,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf ./build",
+    "prepublish": "yarn clean && yarn build",
     "prepublishOnly": "yarn prepublish"
   },
   "dependencies": {
