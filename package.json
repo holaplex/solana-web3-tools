@@ -1,6 +1,6 @@
 {
   "name": "@holaplex/solana-web3-tools",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A set of Web3 tools to improve the User Experience on Solana Frontends.",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf ./build",
-    "prepublish": "yarn clean && yarn build"
+    "prepublishOnly": "yarn prepublish"
   },
   "dependencies": {
     "async-retry": "^1.3.3"
