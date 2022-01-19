@@ -1,6 +1,6 @@
 {
   "name": "@holaplex/solana-web3-tools",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A set of Web3 tools to improve the User Experience on Solana Frontends.",
   "repository": {
     "type": "git",
