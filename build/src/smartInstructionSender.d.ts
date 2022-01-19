@@ -1,7 +1,7 @@
 import { Commitment, Connection, Transaction, PublicKey } from '@solana/web3.js';
 import { InstructionSet } from './types';
 export declare type WalletSigner = {
-    publicKey?: PublicKey;
+    publicKey: PublicKey | null;
     signAllTransactions: (transaction: Transaction[]) => Promise<Transaction[]>;
 };
 /**

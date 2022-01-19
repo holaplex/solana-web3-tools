@@ -14,7 +14,7 @@ import { getSlotAndCurrentBlockHash } from './tools';
 import { InstructionSet } from './types';
 
 export type WalletSigner = {
-  publicKey?: PublicKey;
+  publicKey: PublicKey | null;
   signAllTransactions: (transaction: Transaction[]) => Promise<Transaction[]>;
 };
 
