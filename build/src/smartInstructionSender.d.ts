@@ -11,7 +11,11 @@ export declare type ProgressCb = (
 /**
  * Index of the current InstructionSet.
  */
-currentIndex: number) => void;
+currentIndex: number, 
+/**
+ * Transaction Id (If successful).
+ */
+txId: string) => void;
 /**
  * Callback for when a transaction needs to be re-signed.
  */

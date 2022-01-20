@@ -26,6 +26,10 @@ export type ProgressCb = (
    * Index of the current InstructionSet.
    */
   currentIndex: number,
+  /**
+   * Transaction Id (If successful).
+   */
+  txId: string,
 ) => void;
 
 /**
@@ -280,7 +284,7 @@ export class SmartInstructionSender {
               }
             }
 
-            this.onProgressCallback?.(i);
+            this.onProgressCallback?.(i, result.txid);
             successfulItems++;
 
             if (result.slot >= slot + 150) {

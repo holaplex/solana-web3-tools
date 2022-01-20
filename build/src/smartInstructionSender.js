@@ -165,7 +165,7 @@ class SmartInstructionSender {
                                 return;
                             }
                         }
-                        (_e = this.onProgressCallback) === null || _e === void 0 ? void 0 : _e.call(this, i);
+                        (_e = this.onProgressCallback) === null || _e === void 0 ? void 0 : _e.call(this, i, result.txid);
                         successfulItems++;
                         if (result.slot >= slot + 150) {
                             const nextTXs = signedTXs.slice(i + 1);
