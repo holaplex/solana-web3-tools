@@ -6,5 +6,5 @@ export const getSlotAndCurrentBlockHash = (
 ) =>
   Promise.all([
     connection.getSlot(commitment),
-    connection.getRecentBlockhash(commitment),
+    connection.getLatestBlockhash(commitment),
   ]);

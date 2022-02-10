@@ -188,7 +188,6 @@ export class SmartInstructionSender {
     index: number,
     blockhash: {
       blockhash: string;
-      feeCalculator: FeeCalculator;
     },
     attempt: number = 0,
   ) => {
@@ -222,8 +221,7 @@ export class SmartInstructionSender {
    */
   public send = async () => {
     if (!this.wallet?.publicKey) throw new Error('WALLET_NOT_CONNECTED');
-    if (!this.instructionSets?.length)
-      throw new Error('No instruction sets provided');
+    if (!this.instructionSets?.length) throw new Error('NO_INSTRUCTION_SETS');
 
     let [slot, currentBlock] = await getSlotAndCurrentBlockHash(
       this.connection,
